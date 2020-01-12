@@ -20,8 +20,16 @@ public class Houses {
 		
 	}
 	public void drawHouse(Robot walle) {
-		drawFlatRoof(walle, "small", Color.BLUE);
-		drawPointyRoof(walle, "medium", Color.RED);
+		drawFlatRoof(walle, "large", Color.BLUE);
+		drawPointyRoof(walle, "small", Color.MAGENTA);
+		drawFlatRoof(walle, "large", Color.RED);
+		drawFlatRoof(walle, "medium", Color.ORANGE);
+		drawPointyRoof(walle, "medium", Color.PINK);
+		drawPointyRoof(walle, "small", Color.YELLOW);
+		drawFlatRoof(walle, "large", Color.RED);
+		drawFlatRoof(walle, "large", Color.ORANGE);
+		drawPointyRoof(walle, "medium", Color.BLUE);
+		drawPointyRoof(walle, "small", Color.RED);
 	}
 	public void drawFlatRoof(Robot walle, String shgt, Color c) {
 		int height = 0;

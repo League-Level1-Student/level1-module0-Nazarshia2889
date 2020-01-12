@@ -17,8 +17,11 @@ import javax.swing.JOptionPane;
 public class PhotoQuiz {
 
 	public void run() throws Exception {
+		
+		int score = 0;
 
 		JFrame quizWindow = new JFrame();
+		
 		quizWindow.setVisible(true);
 		// This will make sure the program exits when you close the window
 		quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,34 +29,70 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address”)
+		String image = "https://image.shutterstock.com/image-vector/happy-dog-cartoon-260nw-399897679.jpg";
 
 		// 2. create a variable of type "Component" that will hold your image
+		Component name = createImage(image);
 
 		// 3. use the "createImage()" method below to initialize your Component
 
 		// 4. add the image to the quiz window
+		quizWindow.add(name);
 
 		// 5. call the pack() method on the quiz window
+		quizWindow.pack();
 
 		// 6. ask a question that relates to the image
+		JOptionPane.showMessageDialog(null, "Score: " + score);
+		String answer = JOptionPane.showInputDialog(null, "Do dogs have four legs?");
 
 		// 7. print "CORRECT" if the user gave the right answer
+		if(answer.equalsIgnoreCase("yes")) {
+			JOptionPane.showMessageDialog(null, "CORRECT");
+			score = score + 1;
+			JOptionPane.showMessageDialog(null, "Score: " + score);
+			
+		}
 
 		// 8. print "INCORRECT" if the answer is wrong
+		else {
+			JOptionPane.showMessageDialog(null, "INCORRECT");
+			JOptionPane.showMessageDialog(null, "Score: " + score);
+		}
 
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
+		quizWindow.remove(name);
 
 		// 10. find another image and create it (might take more than one line
 		// of code)
+		String starwars = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/694px-Star_Wars_Logo.svg.png";
+		
+		Component star = createImage(starwars);
+		
 
 		// 11. add the second image to the quiz window
+		quizWindow.add(star);
+		
 
 		// 12. pack the quiz window
+		quizWindow.pack();
 
 		// 13. ask another question
+		String second = JOptionPane.showInputDialog(null, "Is this Star Wars?");
 
 		// 14+ check answer, say if correct or incorrect, etc.
+		if(second.equalsIgnoreCase("yes")) {
+			JOptionPane.showMessageDialog(null, "CORRECT");
+			score = score + 1;
+			JOptionPane.showMessageDialog(null, "Score: " + score);
+		}
+
+		// 8. print "INCORRECT" if the answer is wrong
+		else {
+			JOptionPane.showMessageDialog(null, "INCORRECT");
+			JOptionPane.showMessageDialog(null, "Score: " + score);
+		}
 
 	}
 
