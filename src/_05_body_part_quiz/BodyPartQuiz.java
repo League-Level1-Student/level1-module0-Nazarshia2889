@@ -42,7 +42,7 @@ public class BodyPartQuiz {
 
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
-		window.setSize(500, 500);
+		window.setSize(100, 120);
 
 		showNextImage();
 
@@ -54,23 +54,77 @@ public class BodyPartQuiz {
 		int score = 0;
 
 		// 2. Set the size of the window in the initializeGui() method 
-		window.setSize(500, 500);
+		
 
 		// 4. Ask the user who this person is and store their answer
-		String guess = JOptionPane.showInputDialog("who is this?");
+		String guess = JOptionPane.showInputDialog("Who is this?");
 
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
+		if(guess.equalsIgnoreCase("Arnold")) {
+			JOptionPane.showMessageDialog(null, "You got it right!");
+			score = score + 1;
+			JOptionPane.showMessageDialog(null, "Score: "+ score);
+		}
 
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
+		else {
+			JOptionPane.showMessageDialog(null, "Sorry you got it wrong. It's Arnold!");
+		}
 
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
+		
+		String second = JOptionPane.showInputDialog("Who is this?");
 
+		
+		if(second.equalsIgnoreCase("Leonardo")) {
+			JOptionPane.showMessageDialog(null, "You got it right!");
+			score = score + 1;
+			JOptionPane.showMessageDialog(null, "Score: "+ score);
+		}
+
+		
+		else {
+			JOptionPane.showMessageDialog(null, "Sorry you got it wrong. It's Leonardo!");
+		}
+		showNextImage();
+
+		String third = JOptionPane.showInputDialog("Who is this?");
+
+		
+		if(third.equalsIgnoreCase("Morgan")) {
+			JOptionPane.showMessageDialog(null, "You got it right!");
+			score = score + 1;
+			JOptionPane.showMessageDialog(null, "Score: "+ score);
+		}
+
+		
+		else {
+			JOptionPane.showMessageDialog(null, "Sorry you got it wrong. It's Leonardo!");
+		}
+		showNextImage();
+		
+		String fourth = JOptionPane.showInputDialog("Who is this?");
+
+		
+		if(fourth.equalsIgnoreCase("Jack")) {
+			JOptionPane.showMessageDialog(null, "You got it right!");
+			score = score + 1;
+			JOptionPane.showMessageDialog(null, "Score: "+ score);
+		}
+
+		
+		else {
+			JOptionPane.showMessageDialog(null, "Sorry you got it wrong. It's Leonardo!");
+		}
+		
 		// 8. .... repeat 4-7 for all your images.....
 
 		// 9. Show them their current score
+		JOptionPane.showMessageDialog(null, "Final Score: " + score);
+		
 
 	}
 
