@@ -19,9 +19,10 @@ public class JackInTheBox implements ActionListener {
          frame.setVisible(true);
          JButton button = new JButton();
          frame.add(button);
+         button.setText("Surprise");
          frame.pack();
          button.addActionListener(this);
-         
+                 
 	}
 	
 	
@@ -77,7 +78,8 @@ public class JackInTheBox implements ActionListener {
 		// TODO Auto-generated method stub
 		pressed += 1;
 		if(pressed == 5) {
-			
+			showPicture("jackInTheBox.png");
+			playSound("homer-woohoo.wav");
 		}
 	}
 }
